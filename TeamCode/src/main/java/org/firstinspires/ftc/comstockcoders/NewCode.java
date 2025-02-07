@@ -77,6 +77,7 @@ public class NewCode extends LinearOpMode {
             // Up
             Arm_Motor.setPower(-1 / 2);
             MoveClaw.setPosition(0);
+            WristClaw.setPosition(0);
         } else {
             // Stops motor
             Arm_Motor.setPower(0);
@@ -89,7 +90,7 @@ public class NewCode extends LinearOpMode {
             if (!isGrabbing) {
                 state = State.Grab;
                 // Down
-                MoveClaw.setPosition(0.2);
+                MoveClaw.setPosition(0.7);
                 // Wrist up
                 WristClaw.setPosition(1);
                 // Open
