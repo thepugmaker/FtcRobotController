@@ -40,6 +40,7 @@ public class NewCode extends LinearOpMode {
 
         // Init blocks go here
         Left_Motor.setDirection(DcMotor.Direction.REVERSE);
+        Arm_Motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         isGrabbing = false;
         waitForStart();
         if (opModeIsActive()) {
