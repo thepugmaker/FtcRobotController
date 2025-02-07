@@ -68,10 +68,10 @@ public class NewCode extends LinearOpMode {
     private void GamepadArmMotor() {
         if (gamepad2.right_bumper) {
             // Down
-            Arm_Motor.setPower(1 / 2);
+            Arm_Motor.setPower(1);
         } else if (gamepad2.left_bumper) {
             // Up
-            Arm_Motor.setPower(-1 / 2);
+            Arm_Motor.setPower(-1);
             MoveClaw.setPosition(0);
             WristClaw.setPosition(0);
         } else {
@@ -86,7 +86,7 @@ public class NewCode extends LinearOpMode {
             if (!isGrabbing) {
                 state = State.Grab;
                 // down
-                MoveClaw.setPosition(0.7);
+                MoveClaw.setPosition(0.67);
                 // Wrist up
                 WristClaw.setPosition(0);
                 sleep(300);
