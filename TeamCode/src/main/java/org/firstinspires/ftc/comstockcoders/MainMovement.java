@@ -23,10 +23,10 @@ public class MainMovement extends LinearOpMode {
     private void GamepadArmMotor() {
         if (gamepad2.right_bumper) {
             // Down
-            Arm_Motor.setPower(1 / 2);
+            Arm_Motor.setPower(1);
         } else if (gamepad2.left_bumper) {
             // Up
-            Arm_Motor.setPower(-1 / 2);
+            Arm_Motor.setPower(-1);
             MoveClaw.setPosition(0);
         } else {
             // Stops motor
