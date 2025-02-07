@@ -28,6 +28,7 @@ public class MainMovement extends LinearOpMode {
             // Up
             Arm_Motor.setPower(-1);
             MoveClaw.setPosition(0);
+            WristClaw.setPosition(0);
         } else {
             // Stops motor
             Arm_Motor.setPower(0);
