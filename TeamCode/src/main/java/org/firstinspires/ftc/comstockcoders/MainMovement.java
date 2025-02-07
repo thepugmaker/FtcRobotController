@@ -35,7 +35,7 @@ public class MainMovement extends LinearOpMode {
      */
     private void MoveClawMovement() {
         if (gamepad2.a) {
-            MoveClaw.setPosition(1);
+            MoveClaw.setPosition(0.7);
         } else if (gamepad2.y) {
             MoveClaw.setPosition(0);
         }
@@ -87,7 +87,7 @@ public class MainMovement extends LinearOpMode {
         WristClaw = hardwareMap.get(Servo.class, "WristClaw");
 
         // Put initialization blocks here.
-        Arm_Motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        Arm_Motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         Left_Motor.setDirection(DcMotor.Direction.REVERSE);
         waitForStart();
         if (opModeIsActive()) {
