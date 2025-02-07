@@ -1,16 +1,12 @@
 package org.firstinspires.ftc.comstockcoders;
 
-import androidx.appcompat.app.WindowDecorActionBar;
-
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name = "NewCode")
-
 public class NewCode extends LinearOpMode {
 
     private DcMotor Arm_Motor;
@@ -44,9 +40,9 @@ public class NewCode extends LinearOpMode {
         isGrabbing = false;
         waitForStart();
         if (opModeIsActive()) {
+            // Run code
             MoveClaw.setPosition(0);
             WristClaw.setPosition(1);
-            // Run code
 
             // Main while loop for all op mode action
             while (opModeIsActive()) {
@@ -92,7 +88,7 @@ public class NewCode extends LinearOpMode {
                 // Down
                 MoveClaw.setPosition(0.7);
                 // Wrist up
-                WristClaw.setPosition(1);
+                WristClaw.setPosition(0);
                 // Open
                 RightClaw.setPosition(0.6);
                 isGrabbing = true;
@@ -112,7 +108,7 @@ public class NewCode extends LinearOpMode {
             // Up
             MoveClaw.setPosition(0);
             // Wrist up
-            WristClaw.setPosition(1);
+            WristClaw.setPosition(0);
             sleep(300);
             // Open
             RightClaw.setPosition(0.6);
