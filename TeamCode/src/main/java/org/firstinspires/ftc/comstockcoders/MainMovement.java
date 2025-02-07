@@ -21,19 +21,17 @@ public class MainMovement extends LinearOpMode {
      * Describe this function...
      */
     private void GamepadArmMotor() {
-        if (gamepad2.left_bumper && !ArmIsPressed) {
-            ArmState = !ArmState;
-            ArmIsPressed = true;
-            if (ArmState) {
-                Arm_Motor.setTargetPosition(1911);
-            } else {
-                Arm_Motor.setTargetPosition(0);
-            }
-            Arm_Motor.setPower(-0.25);
-        } else if (!gamepad2.left_bumper && ArmIsPressed) {
-            ArmIsPressed = false;
+        if (gamepad2.right_bumper) {
+            // Down
+            Arm_Motor.setPower(1 / 2);
+        } else if (gamepad2.left_bumper) {
+            // Up
+            Arm_Motor.setPower(-1 / 2);
+            MoveClaw.setPosition(0);
+        } else {
+            // Stops motor
+            Arm_Motor.setPower(0);
         }
-        Arm_Motor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
 
     /**
@@ -93,10 +91,7 @@ public class MainMovement extends LinearOpMode {
         WristClaw = hardwareMap.get(Servo.class, "WristClaw");
 
         // Put initialization blocks here.
-        Arm_Motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         Left_Motor.setDirection(DcMotor.Direction.REVERSE);
-        ArmState = false;
-        ArmIsPressed = false;
         waitForStart();
         if (opModeIsActive()) {
             MoveClaw.setPosition(0);
