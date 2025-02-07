@@ -1,14 +1,16 @@
 package org.firstinspires.ftc.comstockcoders;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import androidx.appcompat.app.WindowDecorActionBar;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name = "NewCode")
-@Disabled
+
 public class NewCode extends LinearOpMode {
 
     private DcMotor Arm_Motor;
@@ -42,9 +44,9 @@ public class NewCode extends LinearOpMode {
         isGrabbing = false;
         waitForStart();
         if (opModeIsActive()) {
-            // Run code
             MoveClaw.setPosition(0);
             WristClaw.setPosition(1);
+            // Run code
 
             // Main while loop for all op mode action
             while (opModeIsActive()) {
@@ -62,8 +64,8 @@ public class NewCode extends LinearOpMode {
 
     // Controlls at movement
     private void Movement() {
-        Left_Motor.setPower((gamepad1.left_stick_y + -gamepad1.right_stick_x) / 2);
-        Right_Motor.setPower((gamepad1.left_stick_y - -gamepad1.right_stick_x) / 2);
+        Left_Motor.setPower((gamepad1.left_stick_y + -gamepad1.right_stick_x) / 1);
+        Right_Motor.setPower((gamepad1.left_stick_y - -gamepad1.right_stick_x) / 1);
     }
 
     // Controlls arm motor for gamepad 2
@@ -87,11 +89,10 @@ public class NewCode extends LinearOpMode {
         if (gamepad2.a) {
             if (!isGrabbing) {
                 state = State.Grab;
-                // down
+                // Down
                 MoveClaw.setPosition(0.7);
                 // Wrist up
-                WristClaw.setPosition(0);
-                sleep(300);
+                WristClaw.setPosition(1);
                 // Open
                 RightClaw.setPosition(0.6);
                 isGrabbing = true;
@@ -99,10 +100,10 @@ public class NewCode extends LinearOpMode {
                 // Close
                 RightClaw.setPosition(1);
                 sleep(150);
-                isGrabbing = false;
                 //if (timer.milliseconds() < 150) {
                 state = State.idle;
                 idleMode();
+                isGrabbing = false;
                 //}
             }
         }
@@ -111,7 +112,7 @@ public class NewCode extends LinearOpMode {
             // Up
             MoveClaw.setPosition(0);
             // Wrist up
-            WristClaw.setPosition(0);
+            WristClaw.setPosition(1);
             sleep(300);
             // Open
             RightClaw.setPosition(0.6);
