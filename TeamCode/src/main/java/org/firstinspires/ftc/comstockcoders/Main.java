@@ -4,10 +4,9 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.util.ElapsedTime;
 
-@TeleOp(name = "NewCode")
-public class NewCode extends LinearOpMode {
+@TeleOp(name = "Main")
+public class Main extends LinearOpMode {
 
     private DcMotor Arm_Motor;
     private Servo MoveClaw;
@@ -23,7 +22,6 @@ public class NewCode extends LinearOpMode {
         idle
     }
     private State state;
-    ElapsedTime timer = new ElapsedTime();
 
     @Override
     public void runOpMode() {
@@ -49,9 +47,6 @@ public class NewCode extends LinearOpMode {
                 // Calls all functions in a loop
                 Movement();
                 GamepadArmMotor();
-                SwitchStates();
-                // MoveClawMovement();
-                // ClawGrab();
                 Telemetry2();
                 telemetry.update();
             }
@@ -98,10 +93,8 @@ public class NewCode extends LinearOpMode {
                 RightClaw.setPosition(1);
                 sleep(150);
                 isGrabbing = false;
-                //if (timer.milliseconds() < 150) {
                 state = State.idle;
                 idleMode();
-                //}
             }
         }
         if (gamepad2.y) {
@@ -120,6 +113,7 @@ public class NewCode extends LinearOpMode {
         }
     }
 
+    // Idle mode for setting it to idle mode for driving or moving
     private void idleMode() {
         if (state == State.idle) {
             // Up
@@ -129,19 +123,6 @@ public class NewCode extends LinearOpMode {
         }
     }
 
-    /*
-    Moves the claw pos
-    private void MoveClawMovement() {
-        if (gamepad2.a) {
-            // Down
-            MoveClaw.setPosition(1);
-        } else if (gamepad2.y) {
-            // Up
-            MoveClaw.setPosition(0.5);
-        }
-    } */
-
-
     // Main telemetry for robot
     private void Telemetry2() {
         telemetry.addData("Right Motor", Right_Motor.getPower());
@@ -150,16 +131,4 @@ public class NewCode extends LinearOpMode {
         telemetry.addData("Servo Wrist", WristClaw.getPosition());
         telemetry.addData("Servo Move", MoveClaw.getPosition());
     }
-
-    /*
-    Controls claw grabbing
-    private void ClawGrab() {
-        if (gamepad2.b) {
-            // Close
-            RightClaw.setPosition(1);
-        } else if (gamepad2.x) {
-            // Open
-            RightClaw.setPosition(0);
-        }
-    }   */
 }

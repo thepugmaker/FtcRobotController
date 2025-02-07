@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.comstockcoders;
+package org.firstinspires.ftc.comstockcoders.Disabled;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name = "MainMovement")
+@Disabled
 public class MainMovement extends LinearOpMode {
 
     private DcMotor Arm_Motor;
