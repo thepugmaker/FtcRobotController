@@ -84,7 +84,7 @@ public class MainMovement extends LinearOpMode {
         Right_Motor = hardwareMap.get(DcMotor.class, "Right_Motor");
         Left_Motor = hardwareMap.get(DcMotor.class, "Left_Motor");
         RightClaw = hardwareMap.get(Servo.class, "RightClaw");
-        WristClaw = hardwareMap.get(Servo.class, "WristServo");
+        WristClaw = hardwareMap.get(Servo.class, "WristClaw");
 
         // Put initialization blocks here.
         Arm_Motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
