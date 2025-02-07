@@ -86,7 +86,7 @@ public class NewCode extends LinearOpMode {
             if (!isGrabbing) {
                 state = State.Grab;
                 // down
-                MoveClaw.setPosition(0.6);
+                MoveClaw.setPosition(0.7);
                 // Wrist up
                 WristClaw.setPosition(0);
                 sleep(300);
