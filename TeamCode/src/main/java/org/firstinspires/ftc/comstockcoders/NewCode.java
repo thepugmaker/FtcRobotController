@@ -96,10 +96,10 @@ public class NewCode extends LinearOpMode {
                 // Close
                 RightClaw.setPosition(1);
                 sleep(150);
+                isGrabbing = false;
                 //if (timer.milliseconds() < 150) {
                 state = State.idle;
                 idleMode();
-                isGrabbing = false;
                 //}
             }
         }
