@@ -85,10 +85,11 @@ public class NewCode extends LinearOpMode {
         if (gamepad2.a) {
             if (!isGrabbing) {
                 state = State.Grab;
-                // Down
-                MoveClaw.setPosition(0.7);
+                // down
+                MoveClaw.setPosition(0.6);
                 // Wrist up
                 WristClaw.setPosition(0);
+                sleep(300);
                 // Open
                 RightClaw.setPosition(0.6);
                 isGrabbing = true;
