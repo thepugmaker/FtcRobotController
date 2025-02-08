@@ -85,7 +85,7 @@ public class Main extends LinearOpMode {
                 // down
                 MoveClaw.setPosition(0.7);
                 // Wrist up
-                WristClaw.setPosition(0);
+                WristClaw.setPosition(1);
                 sleep(300);
                 // Open
                 RightClaw.setPosition(0.6);
@@ -104,7 +104,7 @@ public class Main extends LinearOpMode {
             // Up
             MoveClaw.setPosition(0);
             // Wrist up
-            WristClaw.setPosition(0);
+            WristClaw.setPosition(1);
             sleep(300);
             // Open
             RightClaw.setPosition(0.6);
