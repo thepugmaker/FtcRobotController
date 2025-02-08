@@ -61,18 +61,18 @@ public class NewCode extends LinearOpMode {
 
     // Controlls at movement
     private void Movement() {
-        Left_Motor.setPower((gamepad1.left_stick_y + -gamepad1.right_stick_x) / 1);
-        Right_Motor.setPower((gamepad1.left_stick_y - -gamepad1.right_stick_x) / 1);
+        Left_Motor.setPower((gamepad1.left_stick_y + -gamepad1.right_stick_x) / 2);
+        Right_Motor.setPower((gamepad1.left_stick_y - -gamepad1.right_stick_x) / 2);
     }
 
     // Controlls arm motor for gamepad 2
     private void GamepadArmMotor() {
         if (gamepad2.right_bumper) {
             // Down
-            Arm_Motor.setPower(1);
+            Arm_Motor.setPower(1 / 2);
         } else if (gamepad2.left_bumper) {
             // Up
-            Arm_Motor.setPower(-1);
+            Arm_Motor.setPower(-1 / 2);
             MoveClaw.setPosition(0);
             WristClaw.setPosition(0);
         } else {
@@ -87,7 +87,7 @@ public class NewCode extends LinearOpMode {
             if (!isGrabbing) {
                 state = State.Grab;
                 // down
-                MoveClaw.setPosition(0.67);
+                MoveClaw.setPosition(0.7);
                 // Wrist up
                 WristClaw.setPosition(0);
                 sleep(300);
