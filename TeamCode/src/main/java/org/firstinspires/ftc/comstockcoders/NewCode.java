@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.comstockcoders.Disabled;
+package org.firstinspires.ftc.comstockcoders;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
