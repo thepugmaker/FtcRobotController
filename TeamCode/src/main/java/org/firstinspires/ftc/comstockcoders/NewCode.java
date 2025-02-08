@@ -8,7 +8,6 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name = "NewCode")
-@Disabled
 public class NewCode extends LinearOpMode {
 
     private DcMotor Arm_Motor;

@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.comstockcoders;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name = "Main")
+@Disabled
 public class Main extends LinearOpMode {
 
     private DcMotor Arm_Motor;
