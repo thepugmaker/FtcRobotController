@@ -7,7 +7,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name = "Main")
-@Disabled
 public class Main extends LinearOpMode {
 
     private DcMotor Arm_Motor;
@@ -49,6 +48,7 @@ public class Main extends LinearOpMode {
                 // Calls all functions in a loop
                 Movement();
                 GamepadArmMotor();
+                SwitchStates();
                 Telemetry2();
                 telemetry.update();
             }
@@ -57,8 +57,8 @@ public class Main extends LinearOpMode {
 
     // Controlls at movement
     private void Movement() {
-        Left_Motor.setPower((gamepad1.left_stick_y + -gamepad1.right_stick_x) / 1);
-        Right_Motor.setPower((gamepad1.left_stick_y - -gamepad1.right_stick_x) / 1);
+        Left_Motor.setPower((gamepad1.left_stick_y + -gamepad1.right_stick_x) / 2);
+        Right_Motor.setPower((gamepad1.left_stick_y - -gamepad1.right_stick_x) / 2);
     }
 
     // Controlls arm motor for gamepad 2
@@ -83,7 +83,7 @@ public class Main extends LinearOpMode {
             if (!isGrabbing) {
                 state = State.Grab;
                 // down
-                MoveClaw.setPosition(0.67);
+                MoveClaw.setPosition(0.7);
                 // Wrist up
                 WristClaw.setPosition(0);
                 sleep(300);
