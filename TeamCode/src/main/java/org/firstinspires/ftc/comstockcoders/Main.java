@@ -116,7 +116,7 @@ public class Main extends LinearOpMode {
         }
         if (gamepad2.dpad_up) {
             state = State.bartouch;
-            Arm_Motor.setPower(1);
+            Arm_Motor.setPower(-1);
             WristClaw.setPosition(0);
             MoveClaw.setPosition(0);
         }
