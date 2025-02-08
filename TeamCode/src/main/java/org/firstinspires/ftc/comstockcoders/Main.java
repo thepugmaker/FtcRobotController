@@ -70,7 +70,7 @@ public class Main extends LinearOpMode {
             // Up
             Arm_Motor.setPower(-1);
             MoveClaw.setPosition(0);
-            WristClaw.setPosition(0);
+            WristClaw.setPosition(1);
         } else {
             // Stops motor
             Arm_Motor.setPower(0);
@@ -85,7 +85,7 @@ public class Main extends LinearOpMode {
                 // down
                 MoveClaw.setPosition(0.7);
                 // Wrist up
-                WristClaw.setPosition(1);
+                WristClaw.setPosition(0);
                 sleep(300);
                 // Open
                 RightClaw.setPosition(0.6);
