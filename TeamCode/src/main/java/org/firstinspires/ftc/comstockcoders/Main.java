@@ -20,7 +20,8 @@ public class Main extends LinearOpMode {
     private enum State {
         Bucket,
         Grab,
-        idle
+        idle,
+        bartouch
     }
     private State state;
 
@@ -113,6 +114,12 @@ public class Main extends LinearOpMode {
             state = State.idle;
             idleMode();
         }
+        if (gamepad2.dpad_up) {
+            state = State.bartouch;
+            Arm_Motor.setPower(1);
+            WristClaw.setPosition(0);
+            MoveClaw.setPosition(0);
+        }
     }
 
     // Idle mode for setting it to idle mode for driving or moving
@@ -132,5 +139,6 @@ public class Main extends LinearOpMode {
         telemetry.addData("Arm Motor", Arm_Motor.getPower());
         telemetry.addData("Servo Wrist", WristClaw.getPosition());
         telemetry.addData("Servo Move", MoveClaw.getPosition());
+        telemetry.addData("Mode", state);
     }
 }
